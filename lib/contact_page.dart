@@ -5,9 +5,10 @@ import 'package:flutter_contacts/flutter_contacts.dart';
 
 class Contact_Page extends StatefulWidget {
   final Contact contact;
+  final Function onSave;
 
 
-  const Contact_Page({super.key, required this.contact});
+  const Contact_Page({super.key, required this.contact, required this.onSave});
 
   @override
   State<Contact_Page> createState() => _Contact_PageState();
@@ -18,6 +19,15 @@ class _Contact_PageState extends State<Contact_Page> {
 
     Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.edit),
+        onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => Contact_Edit(
+              contact: widget.contact, onSave: (){widget.onSave;})
+          )
+          );
+        },
+      ),
       backgroundColor: Color.fromARGB(255, 167, 220, 204),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),

@@ -126,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   return GestureDetector(
                     onTap: ()
                     {Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Contact_Page(contact: contact)));},
+                        MaterialPageRoute(builder: (context) => Contact_Page(contact: contact, onSave: (){refreshContacts();},)));},
                       child: Row(children: [
                         CircleAvatar(
                             child: (contact.thumbnail != null) ?

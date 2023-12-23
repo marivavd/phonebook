@@ -114,6 +114,7 @@ class _Contact_EditState extends State<Contact_Edit> {
                     style: ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.red),),
                     onPressed: (){
                       Navigator.of(context).pop();
+                      Navigator.of(context).pop();
                     },
                     child: Text('Cancel', style: TextStyle(fontSize: 20, color: Colors.black))),),
               SizedBox(width: 40,),
